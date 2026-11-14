@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://blj5s2t1b2q70"]
+
+[ext_resource type="Script" uid="uid://d0w42bjexpk0l" path="res://Menu/scene_script.gd" id="1_hiutn"]
+
+[node name="Scene" type="Control" unique_id=1259038371]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hiutn")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1114360019]
+layout_mode = 0
+offset_left = 1622.0
+offset_top = 877.0
+offset_right = 1795.0
+offset_bottom = 1020.0
+
+[node name="Label" type="Label" parent="." unique_id=900187077]
+layout_mode = 0
+offset_left = 1416.0
+offset_top = 471.0
+offset_right = 1886.0
+offset_bottom = 848.0
+theme_override_font_sizes/font_size = 53
+text = "make this something that will leave you to the danganmake menu"
+autowrap_mode = 3
