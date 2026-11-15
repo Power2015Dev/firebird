@@ -2,8 +2,8 @@ extends Control
 
 ## The title screen of a Danganmake mod.
 ##
-## Danganmake opens this scene when the player plays a mod whose title screen is
-## turned on in Danganmake's own menu. It talks to Danganmake only through the four signals below,
+## Danganmake opens this scene when the player presses Play on a mod whose title
+## screen is turned on in Danganmake's Mod Maker. It talks to Danganmake only through the four signals below,
 ## and Danganmake tells it about the mod through setup(). Change the look as much as
 ## you like: only keep the signals and setup().
 ##

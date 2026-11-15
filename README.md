@@ -8,7 +8,7 @@ Make your own title screen and main menu for a Danganmake mod.
 2. Export it as `title_screen.pck` (Project > Export > **Title Screen** > Export PCK/ZIP).
 3. Put `title_screen.pck` in your mod's folder, next to `data.txt`.
 
-Players turn it on in Danganmake: **Play**, pick your mod, press **TITLE SCREEN**. From then on, pressing **Play** on your mod opens your title screen (and the last mod turned on also opens when Danganmake starts). It is never on by default.
+Turn it on in Danganmake's **Mod Maker**: pick your mod, press **CHAPTERS**, then **TITLE SCREEN ON**. From then on, pressing **Play** on your mod opens your title screen. With it off, Play starts the mod normally. It is never on by default, and Danganmake always starts on its own menu.
 
 Danganmake always adds its own **DANGANMAKE** button in the corner, so players can always get back to Danganmake's menu.
 
