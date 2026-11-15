@@ -2,28 +2,162 @@
 
 [ext_resource type="Script" uid="uid://d0w42bjexpk0l" path="res://Menu/scene_script.gd" id="1_hiutn"]
 
-[node name="Scene" type="Control" unique_id=1259038371]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_normal"]
+content_margin_left = 24.0
+content_margin_right = 24.0
+bg_color = Color(0.13, 0.12, 0.15, 0.9)
+border_width_left = 6
+border_color = Color(0.85, 0.2, 0.55, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hover"]
+content_margin_left = 24.0
+content_margin_right = 24.0
+bg_color = Color(0.85, 0.2, 0.55, 1)
+border_width_left = 6
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pressed"]
+content_margin_left = 24.0
+content_margin_right = 24.0
+bg_color = Color(0.6, 0.12, 0.38, 1)
+border_width_left = 6
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_disabled"]
+content_margin_left = 24.0
+content_margin_right = 24.0
+bg_color = Color(0.1, 0.1, 0.11, 0.6)
+border_width_left = 6
+border_color = Color(0.3, 0.3, 0.32, 1)
+
+[sub_resource type="Theme" id="Theme_menu"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_disabled_color = Color(0.45, 0.45, 0.48, 1)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 48
+Button/styles/disabled = SubResource("StyleBoxFlat_disabled")
+Button/styles/focus = SubResource("StyleBoxFlat_hover")
+Button/styles/hover = SubResource("StyleBoxFlat_hover")
+Button/styles/normal = SubResource("StyleBoxFlat_normal")
+Button/styles/pressed = SubResource("StyleBoxFlat_pressed")
+Label/colors/font_color = Color(1, 1, 1, 1)
+
+[node name="Scene" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_menu")
 script = ExtResource("1_hiutn")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1114360019]
-layout_mode = 0
-offset_left = 1622.0
-offset_top = 877.0
-offset_right = 1795.0
-offset_bottom = 1020.0
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07, 0.06, 0.09, 1)
 
-[node name="Label" type="Label" parent="." unique_id=900187077]
+[node name="Picture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Title" type="Label" parent="."]
+unique_name_in_owner = true
 layout_mode = 0
-offset_left = 1416.0
-offset_top = 471.0
-offset_right = 1886.0
-offset_bottom = 848.0
-theme_override_font_sizes/font_size = 53
-text = "make this something that will leave you to the danganmake menu"
+offset_left = 120.0
+offset_top = 120.0
+offset_right = 1800.0
+offset_bottom = 400.0
+theme_override_constants/outline_size = 24
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 110
+text = "MOD TITLE"
+vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="MainButtons" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 120.0
+offset_top = 500.0
+offset_right = 720.0
+offset_bottom = 900.0
+theme_override_constants/separation = 18
+
+[node name="NewGame" type="Button" parent="MainButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "NEW GAME"
+alignment = 0
+
+[node name="Continue" type="Button" parent="MainButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "CONTINUE"
+alignment = 0
+
+[node name="Chapters" type="Button" parent="MainButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "CHAPTERS"
+alignment = 0
+
+[node name="Danganmake" type="Button" parent="MainButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "DANGANMAKE MENU"
+alignment = 0
+
+[node name="ChapterPanel" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 120.0
+offset_top = 420.0
+offset_right = 1020.0
+offset_bottom = 1000.0
+theme_override_constants/separation = 18
+
+[node name="ChapterScroll" type="ScrollContainer" parent="ChapterPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ChapterList" type="VBoxContainer" parent="ChapterPanel/ChapterScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 14
+
+[node name="ChapterButton" type="Button" parent="ChapterPanel/ChapterScroll/ChapterList"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 76)
+layout_mode = 2
+text = "CHAPTER"
+alignment = 0
+
+[node name="Back" type="Button" parent="ChapterPanel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 76)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "BACK"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+autoplay = true
